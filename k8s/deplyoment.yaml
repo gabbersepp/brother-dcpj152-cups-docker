@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: brother-dcpj152-cups
+spec:
+  selector:
+    matchLabels:
+      app: brother-dcpj152-cups
+  template:
+    metadata:
+      labels:
+        app: brother-dcpj152-cups
+    spec:
+      containers:
+      - name: brother-dcpj152-cups
+        image: gabbersepp/cups
+        ports:
+        - containerPort: 631
+        imagePullPolicy: Always
+        volumeMounts:
+        - mountPath: /dev/usb/lp0
+          name: dev-usblp0
+        securityContext:
+          privileged: true
+      volumes:
+      - name: dev-usblp0
+        hostPath:
+          path: /dev/usb/lp0

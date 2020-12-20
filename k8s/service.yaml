@@ -1,0 +1,14 @@
+# http://192.168.2.126:30007/
+apiVersion: v1
+kind: Service
+metadata:
+  name: brother-dcpj152-cups-service
+spec:
+  selector:
+    app: brother-dcpj152-cups
+  type: NodePort
+  ports:
+  - port: 631
+    targetPort: 631
+    nodePort: 30007
+    protocol: TCP
