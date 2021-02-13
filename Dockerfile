@@ -1,6 +1,6 @@
 FROM ubuntu:latest
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update \
+RUN export DEBIAN_FRONTEND=noninteractive && \
+apt-get update \
 && apt-get install -y \
   sudo \
   whois \

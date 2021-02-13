@@ -35,7 +35,7 @@ metadata:
   name: brother-dcpj152-cups
   annotations:
     kubernetes.io/ingress.class: nginx 
-    nginx.ingress.kubernetes.io/whitelist-source-range:  192.168.2.0/8
+    nginx.ingress.kubernetes.io/whitelist-source-range:  192.168.2.0/24
     nginx.ingress.kubernetes.io/upstream-vhost: "192.168.2.126" # ip of node :-(
 spec:
   rules:

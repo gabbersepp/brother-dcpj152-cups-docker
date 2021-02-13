@@ -11,6 +11,8 @@ spec:
       labels:
         app: brother-dcpj152-cups
     spec:
+      nodeSelector:
+        name: biehler
       containers:
       - name: brother-dcpj152-cups
         image: gabbersepp/cups
